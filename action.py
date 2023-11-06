@@ -32,8 +32,8 @@ if __name__ == "__main__":
 
     print(os.getcwd())
 
-    # print_and_run(f"git config user.name {args.name!r}")
-    # print_and_run(f"git config user.email {args.email!r}")
+    print_and_run(f"git config user.name {shlex.quote(args.name)}")
+    print_and_run(f"git config user.email {shlex.quote(args.email)}")
     print_and_run(f"git checkout {shlex.quote(args.branch)}")
 
     post_file = "all_posts.csv"
