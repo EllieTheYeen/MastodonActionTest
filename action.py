@@ -86,7 +86,7 @@ if __name__ == "__main__":
     print(f"Posted with id {g['id']!r}")
 
     with open(post_file, "a") as f:
-        c = csv.writer(f, dialect="unix")
+        c = csv.writer(f, dialect="unix", quoting=csv.QUOTE_MINIMAL)
         c.writerow([found, g["id"]])
 
     print_and_run(f"git add {shlex.quote(post_file)}")
