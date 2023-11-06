@@ -1,0 +1,34 @@
+name: Mastodon Action Test
+description: 'A github action that tests if it can post to Mastodon and save the id'
+
+author: Ellie The Yeen <42704150+EllieTheYeen@users.noreply.github.com>
+
+runs:
+  using: composite
+  steps:
+    - run: wget https://raw.githubusercontent.com/EllieTheYeen/MastodonActionTest/main/action.py
+      shell: bash
+    - run: python3 action.py
+      shell: bash
+
+inputs:
+  name:
+    description: Author
+    required: false
+    default: Mastodon Action Test
+  email:
+    description: Mail address
+    required: false
+    default: 42704150+EllieTheYeen@users.noreply.github.com
+  branch:
+    description: Git branch target
+    required: false
+    default: ${{ github.head_ref }}
+  instance:
+    description: Mastodon instance in the form like https://mastodon.social
+    required: true
+    default: https://botsin.space
+  blogbase:
+    description: Jekyll instance in the form like https://ellietheyeen.github.io/Test
+    required: true
+    default: https://ellietheyeen.github.io/Test
