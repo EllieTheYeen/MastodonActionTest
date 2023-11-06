@@ -17,11 +17,11 @@ post_regex = re.compile(r"^[0-9]{4}-[0-9]{2}-[0-9]{2}-.*\.md$")
 
 if __name__ == "__main__":
     pars = argparse.ArgumentParser()
-    pars.add_argument("--name", dest="name", required=True)
-    pars.add_argument("--email", dest="email", required=True)
-    pars.add_argument("--branch", dest="branch", required=True)
-    pars.add_argument("--instance", dest="instance", required=True)
-    pars.add_argument("--blogbase", dest="blogbase", required=True)
+    pars.add_argument("-name", dest="name", required=True)
+    pars.add_argument("-email", dest="email", required=True)
+    pars.add_argument("-branch", dest="branch", required=True)
+    pars.add_argument("-instance", dest="instance", required=True)
+    pars.add_argument("-blogbase", dest="blogbase", required=True)
     args = pars.parse_args()
 
     key = os.environ.get("MASTODON_TOKEN")
