@@ -90,5 +90,6 @@ if __name__ == "__main__":
         c.writerow([found, g["id"]])
 
     print_and_run(f"git add {shlex.quote(post_file)}")
-    print_and_run(f"git commit -m 'Update posts.csv with post {shlex.quote(g['url'])}")
+    commit_msg = f"Update posts.csv with post {shlex.quote(g['url'])}"
+    print_and_run(f"git commit -m {shlex.quote(commit_msg)}")
     print_and_run(f"git push origin {shlex.quote(args.branch)}")
