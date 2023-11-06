@@ -8,7 +8,7 @@ runs:
   steps:
     - run: wget https://raw.githubusercontent.com/EllieTheYeen/MastodonActionTest/main/action.py
       shell: bash
-    - run: python3 action.py -name ${{ inputs.name }} -email ${{ inputs.email }} -branch ${{ inputs.branch }} -instance ${{ inputs.instance }} -blogbase ${{ inputs.blogbase }}
+    - run: python3 action.py -name '${{ inputs.name }}' -email '${{ inputs.email }}' -branch '${{ inputs.branch }}' -instance '${{ inputs.instance }}' -blogbase '${{ inputs.blogbase }}'
       shell: bash
 
 inputs:
